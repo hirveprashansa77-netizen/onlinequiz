@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JEE-style Mock Test</title>
+<link rel="stylesheet" href="sty.css" />
+</head>
+
+<body>
+<div id="frontPage" class="container">
+    <div class="topbar">
+    <div class="brand">
+      <div>
+        <h1>NATIONAL TESTING AGENCY</h1>
+        <p class="tagline">Excellence in Assessment</p>
+      </div>
+    </div>
+
+    <div class="top-controls">
+      <button class="download-btn">⬇ DOWNLOAD</button>
+      <select class="language">
+        <option>English</option>
+        <option>Hindi</option>
+      </select>
+      <div class="candidate">
+        <div class="avatar">👤</div>
+        <div class="meta">
+          <div class="cand-name">Candidate Name: <strong id="topName">[Your Name]</strong></div>
+          <div class="timer">
+            <div>Remaining Time</div>
+            <div class="time-bubble" id="topTimer">60:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="subjects">
+    <button class="subject-btn" id="tabMath">MATHEMATICS</button>
+    <button class="subject-btn inactive" id="tabPhy">PHYSICS</button>
+    <button class="subject-btn inactive" id="tabChem">CHEMISTRY</button>
+    <div class="paper-info">Paper: <strong>JEE MAIN</strong></div>
+  </div>
+
+    <div id="loginBox">
+    <div class="login-form">
+      <input id="username" placeholder="Enter candidate name" />
+      <input id="password" placeholder="Password" type="password" />
+      <button id="startBtn" class="btn green">Start Test</button>
+    </div>
+  </div>
+
+    <div id="testArea" class="main" style="display:none">
+    <div class="left">
+      <div class="q-head">
+        <div>
+          <div class="q-number">Question <span id="qIndex">1</span> of <span id="qTotal">30</span></div>
+          <div id="qSubject">Mathematics</div>
+        </div>
+        <div id="qStatus">Not Visited</div>
+      </div>
+
+      <div class="q-body">
+        <div id="questionText">Question will appear here</div>
+        <div id="optionsList" class="options"></div>
+
+        <div class="controls">
+          <button id="saveNext" class="btn green">SAVE & NEXT</button>
+          <button id="saveMark" class="btn orange">SAVE & MARK FOR REVIEW</button>
+          <button id="markNext" class="btn blue">MARK FOR REVIEW & NEXT</button>
+          <button id="clearResp" class="btn gray">CLEAR RESPONSE</button>
+        </div>
+
+        <div class="navs">
+          <button id="backBtn" class="nav">« BACK</button>
+          <button id="nextBtn" class="nav">NEXT »</button>
+          <div style="flex:1"></div>
+          <button id="submitBtn" class="btn green">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="panel">
+        <div class="panel-head">
+          <div>Question Palette</div>
+          <div class="legend-title">Legend</div>
+        </div>
+
+        <div class="legend">
+          <div class="item"><div class="box ans"></div> Answered</div>
+          <div class="item"><div class="box notans"></div> Not Answered</div>
+          <div class="item"><div class="box mark"></div> Marked</div>
+          <div class="item"><div class="box notvisited"></div> Not Visited</div>
+        </div>
+
+        <div id="paletteContainer" class="palette"></div>
+        <div id="summaryInfo" class="summary"></div>
+
+        <div class="end-btn">
+          <button id="endBtn" class="btn gray">END & SUBMIT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="resultArea" style="display:none">
+    <div class="result-card">
+      <h2>Test Completed</h2>
+      <p>Candidate: <strong id="resName"></strong></p>
+      <div class="score" id="resScore">0 / 30</div>
+      <div id="resBreakdown" class="breakdown"></div>
+      <button id="restart" class="btn gray">Take Another Test</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="scr.js"></script>
+</body>
+</html>

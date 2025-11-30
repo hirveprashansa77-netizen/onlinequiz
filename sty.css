@@ -1,0 +1,138 @@
+/* ---------- Colors & base ---------- */
+:root{
+  --orange:#f68934;
+  --blue:#006bb3;
+  --green:#2e9d4a;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --pane:#f7f9fb;
+  --border:#d9dbe0;
+}
+*{box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
+body{margin:0;background:#fafafa;color:#111}
+.container{max-width:1200px;margin:18px auto;padding:0 16px}
+
+/* 🖼️ LOGIN PAGE STYLES (Front Page Background) */
+#frontPage {
+  /* *** IMPORTANT: Using the EXACT file name provided in your upload *** */
+  background-image:url(ss.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 18px;
+}
+
+#loginBox {
+  /* Center the login box on the background image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; 
+  margin-top: 10px;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 300px;
+}
+
+.login-form input {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+}
+/* END OF LOGIN STYLES */
+
+/* ---------- Top header ---------- */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(246, 137, 52, 0.9); /* Semi-transparent orange for readability */
+  color:#fff;padding:12px 18px;border-radius:6px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .logo{
+  width:56px;height:56px;border-radius:6px;background:#fff;display:grid;place-items:center;color:var(--orange);font-weight:800
+}
+.brand h1{margin:0;font-size:18px;line-height:1}
+.brand p{margin:0;font-size:12px;opacity:.95}
+.top-controls{display:flex;align-items:center;gap:12px}
+.download-btn{background:#fff;color:var(--blue);padding:8px 12px;border-radius:6px;border:0;cursor:pointer;font-weight:700}
+.language{background:#fff;padding:6px;border-radius:6px;border:0}
+
+/* ---------- Candidate info small card ---------- */
+.candidate{
+  background:#fff;padding:10px;border-radius:6px;border:1px solid var(--border);display:flex;gap:10px;align-items:center;color:#333
+}
+.candidate .avatar{width:48px;height:48px;background:#f1f1f1;border-radius:6px;display:grid;place-items:center}
+.candidate .meta{font-size:13px}
+.time-bubble{background:#e6f0ff;color:var(--blue);padding:6px 10px;border-radius:20px;font-weight:700}
+
+/* ---------- Subject tabs row ---------- */
+.subjects{
+  display:flex;align-items:center;gap:10px;margin-top:12px;
+}
+.subjects .subject-btn{background:var(--blue);color:#fff;padding:8px 12px;border-radius:4px;border:0;cursor:pointer;font-weight:700}
+.subjects .subject-btn.inactive{background:#eaf5ff;color:var(--blue);font-weight:700;border:1px solid rgba(0,107,179,.12)}
+
+/* ---------- Main layout (Test Area) ---------- */
+.main{display:flex;gap:18px;margin-top:14px}
+.left{flex:1;background:var(--card);padding:18px;border-radius:6px;border:1px solid var(--border)}
+.right{width:320px;min-width:260px}
+
+/* question area */
+.q-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.q-number{font-weight:800}
+.q-body{min-height:170px;padding:18px;border-radius:6px;background:linear-gradient(#fff,#fbfcff);border:1px solid #f0f3fb}
+.q-text{font-size:16px;line-height:1.6}
+.options{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.opt{
+  padding:10px 12px;border-radius:6px;border:1px solid var(--border);cursor:pointer;display:flex;gap:12px;align-items:flex-start;
+  background:#fff
+}
+.opt span.label{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;border:1px solid #ddd}
+.opt.selected{border-color:var(--blue);box-shadow:0 8px 20px rgba(0,107,179,.06)}
+.opt .text{flex:1}
+
+/* control buttons like JEE */
+.controls{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{
+  padding:10px 14px;border-radius:6px;border:0;cursor:pointer;font-weight:700;
+}
+.btn.green{background:var(--green);color:#fff}
+.btn.orange{background:var(--orange);color:#fff}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.gray{background:#fff;border:1px solid var(--border);color:#333}
+.navs{display:flex;gap:8px;margin-top:12px;align-items:center}
+.navs .nav{padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:#fff;cursor:pointer}
+
+/* right panel palette and legend */
+.panel{background:var(--card);padding:14px;border-radius:6px;border:1px solid var(--border)}
+.legend{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.legend .item{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.legend .box{width:22px;height:22px;border-radius:4px;border:1px solid #ddd}
+.box.ans{background:#28d197}
+.box.notans{background:#ffd9a6}
+.box.mark{background:#ffb6e0}
+.box.notvisited{background:#f5f7fb}
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.pbtn{padding:10px;border-radius:6px;border:1px solid var(--border);text-align:center;cursor:pointer;background:#fff;font-weight:700}
+.pbtn.answered{background:#e8fff2;border-color:#7fd0a0}
+.pbtn.not-answered{background:#fff7ed;border-color:#ffd09a}
+.pbtn.marked{background:#fff0f6;border-color:#f3a0d1}
+.pbtn.not-visited{background:#f5f7fb}
+.summary{font-size:14px;color:var(--muted);margin-top:12px}
+
+/* result modal style (simple) */
+.result-card{padding:22px;border-radius:8px;background:#fff;border:1px solid var(--border);text-align:center}
+.score{font-size:40px;font-weight:900;color:var(--blue)}
+.breakdown{margin-top:12px;text-align:left}
+
+/* responsive tweaks */
+@media (max-width:980px){.main{flex-direction:column}.right{width:100%}}
